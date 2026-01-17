@@ -63,13 +63,17 @@ def run_phase3():
 
     phase3_dir = Path(__file__).parent / 'phase3'
 
-    # Check if phase 3 scripts exist
-    if not (phase3_dir / 'autoencoder_transfer.py').exists():
-        print("Phase 3 scripts not yet implemented.")
-        print("See IMPLEMENTATION_PLAN.md for details.")
-        return
-
+    # Step 1: Autoencoder transfer learning
+    print("\n[1/3] Transfer learning with autoencoder...")
     subprocess.run([sys.executable, str(phase3_dir / 'autoencoder_transfer.py')])
+
+    # Step 2: Augmented training comparison
+    print("\n[2/3] Augmented training comparison...")
+    subprocess.run([sys.executable, str(phase3_dir / 'augmented_training.py')])
+
+    # Step 3: Domain analysis
+    print("\n[3/3] Domain analysis and visualization...")
+    subprocess.run([sys.executable, str(phase3_dir / 'domain_analysis.py')])
 
 
 def run_phase4():

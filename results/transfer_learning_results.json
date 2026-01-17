@@ -1,0 +1,10 @@
+{
+  "metrics": {
+    "accuracy": 0.5897435897435898,
+    "sensitivity": 0.05084745762711865,
+    "specificity": 1.0,
+    "precision": 1.0,
+    "f1": 0.0967741935483871,
+    "confusion_matrix": [
+      [
+        

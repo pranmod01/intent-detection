@@ -1,0 +1,36 @@
+{
+  "distances": {
+    "voluntary": {
+      "distance_to_physionet": 0.24898199460546463,
+      "within_variance": 0.19978472508547584,
+      "n_samples": 128
+    },
+    "imagery": {
+      "distance_to_physionet": 1.9307217303659188,
+      "within_variance": 2.0020163158461894,
+      "n_samples": 131
+    },
+    "ems_short": {
+      "distance_to_physionet": 1.4812938524642856,
+      "within_variance": 7.772524240482834,
+      "n_samples": 133
+    },
+    "ems_long": {
+      "distance_to_physionet": 0.09254839393469494,
+      "within_variance": 1.0003386231279373e-05,
+      "n_samples": 126
+    },
+    "passive": {
+      "distance_to_physionet": 0.08623570795755237,
+      "within_variance": 2.1378186587291808e-05,
+      "n_samples": 137
+    },
+    "Condition 5": {
+      "distance_to_physionet": 0.06968746946453427,
+      "within_variance": 0.00012982577368086395,
+      "n_samples": 254
+    }
+  },
+  "avg_intent_distance": 1.0898518624856917,
+  "avg_nonintent_distance": 0.5533593181188443
+}
