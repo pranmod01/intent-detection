@@ -1,0 +1,46 @@
+{
+  "experiment_info": {
+    "description": "EEG/EMG/EMS study of voluntary vs. externally-evoked motor activation",
+    "muscle": "supinator",
+    "eeg_channels": ["C3", "C4", "Cz", "CP3"],
+    "sampling_rate": 200,
+    "frequency_bands": {
+      "mu": [8, 13],
+      "beta": [13, 30]
+    }
+  },
+  "subjects": {
+    "subject_1": {
+      "session_id": "2025-11-03_16-09-29",
+      "conditions": {
+        "2025-11-03_16-46-42_clean.csv": "Left hand voluntary movement",
+        "2025-11-03_16-48-49_clean.csv": "Right hand voluntary movement",
+        "2025-11-03_16-50-22_clean.csv": "Motor imagery (thinking about movement)",
+        "2025-11-03_16-52-21_clean.csv": "Left hand EMS causing right hand movement (1 min)",
+        "2025-11-03_16-53-41_clean.csv": "Left hand EMS causing right hand movement (longer pulses every 3s)",
+        "2025-11-03_16-58-32_clean.csv": "Experimenter moves subject's right hand (1 min, aware)",
+        "2025-11-03_17-02-28_clean.csv": "Experimenter moves subject's right hand (1 min, aware)"
+      }
+    },
+    "subject_2": {
+      "session_id": "2025-11-15_11-29-43",
+      "conditions": {
+        "2025-11-15_12-01-33_clean.csv": "Left hand voluntary movement",
+        "2025-11-15_12-05-27_clean.csv": "Right hand voluntary movement",
+        "2025-11-15_12-07-49_clean.csv": "Motor imagery (thinking about movement)",
+        "2025-11-15_12-26-33_clean.csv": "Left hand EMS causing right hand movement (1 min)",
+        "2025-11-15_12-33-39_clean.csv": "Left hand EMS causing right hand movement (longer pulses every 3s)",
+        "2025-11-15_12-42-56_clean.csv": "Experimenter moves subject's right hand (1 min, aware)",
+        "2025-11-15_12-44-39_clean.csv": "Experimenter moves subject's right hand (1 min, aware)"
+      }
+    }
+  },
+  "condition_categories": {
+    "voluntary_left": "Voluntary left hand movement",
+    "voluntary_right": "Voluntary right hand movement",
+    "motor_imagery": "Motor imagery without movement",
+    "ems_short": "EMS-evoked movement (short pulses)",
+    "ems_long": "EMS-evoked movement (long pulses)",
+    "passive_movement": "Passive movement by experimenter"
+  }
+}

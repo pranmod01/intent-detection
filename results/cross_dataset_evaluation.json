@@ -1,0 +1,22 @@
+{
+  "intent": {
+    "n_samples": 392,
+    "predicted_as_intent": 358.0,
+    "predicted_as_rest": 34.0,
+    "intent_rate": 0.9132653061224489
+  },
+  "ems": {
+    "n_samples": 263,
+    "predicted_as_intent": 258.0,
+    "predicted_as_rest": 5.0,
+    "specificity": 0.019011406844106463,
+    "false_positive_rate": 0.9809885931558935
+  },
+  "passive": {
+    "n_samples": 254,
+    "predicted_as_intent": 247.0,
+    "predicted_as_rest": 7.0,
+    "specificity": 0.027559055118110236,
+    "false_positive_rate": 0.9724409448818898
+  }
+}
