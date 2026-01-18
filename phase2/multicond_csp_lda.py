@@ -1,7 +1,7 @@
 """
 Multi-Condition CSP + LDA Classifier
 
-Trains CSP + LDA on your multi-condition data (intent vs. non-intent).
+Trains CSP + LDA on the multi-condition data (intent vs. non-intent).
 This demonstrates that training on explicit non-intent examples solves
 the false positive problem shown in Phase 1.
 """

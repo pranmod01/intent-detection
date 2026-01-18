@@ -1,0 +1,28 @@
+{
+  "mean_timestep_accuracy": 0.6352099792099792,
+  "std_timestep_accuracy": 0.046020790020790014,
+  "mean_trial_accuracy": 0.5440124740124741,
+  "std_trial_accuracy": 0.05752598752598753,
+  "per_subject": [
+    {
+      "timestep_accuracy": 0.5891891891891892,
+      "timestep_precision": 0.0,
+      "timestep_recall": 0.0,
+      "timestep_f1": 0.0,
+      "trial_accuracy": 0.4864864864864865,
+      "n_trials": 259,
+      "n_timesteps": 400,
+      "test_subject": 0
+    },
+    {
+      "timestep_accuracy": 0.6812307692307692,
+      "timestep_precision": 0.0,
+      "timestep_recall": 0.0,
+      "timestep_f1": 0.0,
+      "trial_accuracy": 0.6015384615384616,
+      "n_trials": 650,
+      "n_timesteps": 400,
+      "test_subject": 1
+    }
+  ]
+}

@@ -2,7 +2,7 @@
 PhysioNet Motor Movement/Imagery Dataset Loader
 
 Downloads and prepares the EEGMMIDB dataset for training a standard MI-BCI.
-Matches preprocessing to your local data for fair comparison.
+Matches preprocessing to our local data for fair comparison.
 
 Dataset: https://physionet.org/content/eegmmidb/1.0.0/
 """

@@ -1,2 +1,2 @@
-# Phase 4: Real-Time Deployment Demo
-# Optimized inference and interactive visualization
+# Phase 4: Temporal Intent Detection
+# LSTM-based detection of intent onset/offset within each subject

@@ -7,6 +7,8 @@ Run the complete motor intent detection analysis pipeline.
 Usage:
     python run_pipeline.py --phase 1    # Run Phase 1 only
     python run_pipeline.py --phase 2    # Run Phase 2 only
+    python run_pipeline.py --phase 3    # Run Phase 3 only
+    python run_pipeline.py --phase 5    # Run Phase 5 (Temporal LSTM)
     python run_pipeline.py --all        # Run all phases
     python run_pipeline.py --demo       # Launch demo app
 """
@@ -82,11 +84,23 @@ def run_phase4():
     print("PHASE 4: Interactive Demo")
     print("="*70)
 
-    phase4_dir = Path(__file__).parent / 'phase4'
+    phase4_dir = Path(__file__).parent / 'phase4_demo'
 
     print("\nLaunching Streamlit demo...")
     print("Open http://localhost:8501 in your browser")
     subprocess.run(['streamlit', 'run', str(phase4_dir / 'demo_app.py')])
+
+
+def run_phase5():
+    """Run Phase 5: Temporal Intent Detection."""
+    print("\n" + "="*70)
+    print("PHASE 5: Temporal Intent Detection (LSTM)")
+    print("="*70)
+
+    phase5_dir = Path(__file__).parent / 'phase5'
+
+    print("\n[1/1] Training temporal LSTM with LOSO validation...")
+    subprocess.run([sys.executable, str(phase5_dir / 'temporal_intent_lstm.py')])
 
 
 def run_existing_analysis():
@@ -118,8 +132,8 @@ Examples:
         """
     )
 
-    parser.add_argument('--phase', type=int, choices=[1, 2, 3, 4],
-                        help='Run specific phase (1-4)')
+    parser.add_argument('--phase', type=int, choices=[1, 2, 3, 4, 5],
+                        help='Run specific phase (1-5)')
     parser.add_argument('--all', action='store_true',
                         help='Run all phases sequentially')
     parser.add_argument('--demo', action='store_true',
@@ -142,7 +156,8 @@ Examples:
         run_phase1()
         run_phase2()
         run_phase3()
-        run_phase4()
+        run_phase5()
+        run_phase4()  # Demo last
     elif args.phase:
         if args.phase == 1:
             run_phase1()
@@ -152,6 +167,8 @@ Examples:
             run_phase3()
         elif args.phase == 4:
             run_phase4()
+        elif args.phase == 5:
+            run_phase5()
     else:
         parser.print_help()
         print("\n" + "-"*70)
@@ -159,7 +176,9 @@ Examples:
         print("  1. Install dependencies: pip install -r requirements.txt")
         print("  2. Run Phase 1: python run_pipeline.py --phase 1")
         print("  3. Run Phase 2: python run_pipeline.py --phase 2")
-        print("  4. Launch demo: python run_pipeline.py --demo")
+        print("  4. Run Phase 3: python run_pipeline.py --phase 3")
+        print("  5. Run Phase 5: python run_pipeline.py --phase 5  (Temporal LSTM)")
+        print("  6. Launch demo: python run_pipeline.py --demo")
         print("-"*70)
 
 

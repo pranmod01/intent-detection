@@ -1,7 +1,7 @@
 """
 Cross-Dataset Evaluation
 
-Tests the PhysioNet-trained CSP+LDA classifier on your local data.
+Tests the PhysioNet-trained CSP+LDA classifier on our local data.
 This demonstrates the critical intent detection problem:
 - Standard MI-BCIs work on intent conditions
 - But FAIL on non-intent conditions (EMS, passive) with high false positives
@@ -25,7 +25,7 @@ from csp_lda_baseline import CSPLDAClassifier, evaluate_classifier
 
 
 class LocalDataLoader:
-    """Load and prepare your local EEG data for cross-dataset evaluation."""
+    """Load and prepare the local EEG data for cross-dataset evaluation."""
 
     def __init__(
         self,
