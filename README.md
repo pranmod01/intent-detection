@@ -90,12 +90,21 @@ python run_pipeline.py --all        # Run all phases
 
 - **Common Spatial Patterns (CSP)**: Learns spatial filters that maximize variance for one class while minimizing it for the other, extracting the most discriminative EEG channel combinations
 - **EEGNet**: Compact convolutional architecture with depthwise/separable convolutions, designed specifically for EEG with limited training data
+- **Convolutional Autoencoder**: Pre-trained on PhysioNet data to learn general EEG representations, then fine-tuned on local data for transfer learning
 - **Bidirectional LSTM**: Captures temporal dynamics for frame-by-frame intent detection, enabling onset/offset localization
 
 ## Data
 
 - **Local dataset**: 2 subjects, 6 conditions, 4 channels (C3, C4, Cz, CP3), 200 Hz sampling
 - **PhysioNet EEGMMIDB**: 109 subjects motor imagery dataset for pre-training and cross-validation
+
+## Limitations
+
+This is a proof-of-concept with a small local dataset (2 subjects). The results demonstrate the methodology and highlight the false positive problem, but should not be interpreted as population-level findings. A production system would require:
+
+- Larger sample size (10+ subjects) for reliable cross-subject generalization
+- Clinical validation with actual FES hardware in the loop
+- Real-time latency optimization for closed-loop control
 
 ## Key Takeaways
 
