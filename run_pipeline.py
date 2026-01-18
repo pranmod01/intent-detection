@@ -8,7 +8,7 @@ Usage:
     python run_pipeline.py --phase 1    # Run Phase 1 only
     python run_pipeline.py --phase 2    # Run Phase 2 only
     python run_pipeline.py --phase 3    # Run Phase 3 only
-    python run_pipeline.py --phase 5    # Run Phase 5 (Temporal LSTM)
+    python run_pipeline.py --phase 4    # Run Phase 4 (Temporal LSTM)
     python run_pipeline.py --all        # Run all phases
     python run_pipeline.py --demo       # Launch demo app
 """
@@ -79,28 +79,28 @@ def run_phase3():
 
 
 def run_phase4():
-    """Run Phase 4: Demo."""
+    """Run Phase 4: Temporal Intent Detection."""
     print("\n" + "="*70)
-    print("PHASE 4: Interactive Demo")
+    print("PHASE 4: Temporal Intent Detection (LSTM)")
     print("="*70)
 
-    phase4_dir = Path(__file__).parent / 'phase4_demo'
+    phase4_dir = Path(__file__).parent / 'phase4'
+
+    print("\n[1/1] Training temporal LSTM with LOSO validation...")
+    subprocess.run([sys.executable, str(phase4_dir / 'temporal_intent_lstm.py')])
+
+
+def run_demo():
+    """Run Interactive Demo."""
+    print("\n" + "="*70)
+    print("Interactive Demo")
+    print("="*70)
+
+    demo_dir = Path(__file__).parent / 'demo'
 
     print("\nLaunching Streamlit demo...")
     print("Open http://localhost:8501 in your browser")
-    subprocess.run(['streamlit', 'run', str(phase4_dir / 'demo_app.py')])
-
-
-def run_phase5():
-    """Run Phase 5: Temporal Intent Detection."""
-    print("\n" + "="*70)
-    print("PHASE 5: Temporal Intent Detection (LSTM)")
-    print("="*70)
-
-    phase5_dir = Path(__file__).parent / 'phase5'
-
-    print("\n[1/1] Training temporal LSTM with LOSO validation...")
-    subprocess.run([sys.executable, str(phase5_dir / 'temporal_intent_lstm.py')])
+    subprocess.run(['streamlit', 'run', str(demo_dir / 'demo_app.py')])
 
 
 def run_existing_analysis():
@@ -126,14 +126,16 @@ def main():
 Examples:
     python run_pipeline.py --phase 1     # Problem demonstration
     python run_pipeline.py --phase 2     # Multi-condition training
+    python run_pipeline.py --phase 3     # Transfer learning
+    python run_pipeline.py --phase 4     # Temporal LSTM
     python run_pipeline.py --all         # Run all phases
     python run_pipeline.py --demo        # Launch interactive demo
     python run_pipeline.py --existing    # Run existing analysis
         """
     )
 
-    parser.add_argument('--phase', type=int, choices=[1, 2, 3, 4, 5],
-                        help='Run specific phase (1-5)')
+    parser.add_argument('--phase', type=int, choices=[1, 2, 3, 4],
+                        help='Run specific phase (1-4)')
     parser.add_argument('--all', action='store_true',
                         help='Run all phases sequentially')
     parser.add_argument('--demo', action='store_true',
@@ -151,13 +153,12 @@ Examples:
     if args.existing:
         run_existing_analysis()
     elif args.demo:
-        run_phase4()
+        run_demo()
     elif args.all:
         run_phase1()
         run_phase2()
         run_phase3()
-        run_phase5()
-        run_phase4()  # Demo last
+        run_phase4()
     elif args.phase:
         if args.phase == 1:
             run_phase1()
@@ -167,8 +168,6 @@ Examples:
             run_phase3()
         elif args.phase == 4:
             run_phase4()
-        elif args.phase == 5:
-            run_phase5()
     else:
         parser.print_help()
         print("\n" + "-"*70)
@@ -177,7 +176,7 @@ Examples:
         print("  2. Run Phase 1: python run_pipeline.py --phase 1")
         print("  3. Run Phase 2: python run_pipeline.py --phase 2")
         print("  4. Run Phase 3: python run_pipeline.py --phase 3")
-        print("  5. Run Phase 5: python run_pipeline.py --phase 5  (Temporal LSTM)")
+        print("  5. Run Phase 4: python run_pipeline.py --phase 4")
         print("  6. Launch demo: python run_pipeline.py --demo")
         print("-"*70)
 

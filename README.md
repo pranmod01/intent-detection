@@ -47,7 +47,7 @@ Train classifiers on all four conditions with binary labels (intent vs. non-inte
 ### Phase 3: Transfer Learning
 Leverage PhysioNet's large dataset to pre-train feature extractors, then fine-tune on local multi-condition data. This helps when local data is limited.
 
-### Phase 5: Temporal Intent Detection
+### Phase 4: Temporal Intent Detection
 LSTM-based model that predicts intent at each timestep, enabling detection of intent onset/offset within trials. Uses Leave-One-Subject-Out validation to demonstrate temporal modeling without claiming population generalization.
 
 ## Conditions
@@ -66,8 +66,8 @@ LSTM-based model that predicts intent at each timestep, enabling detection of in
 ├── phase1/          # Problem demonstration (PhysioNet baseline)
 ├── phase2/          # Multi-condition training (CSP+LDA, EEGNet)
 ├── phase3/          # Transfer learning enhancement
-├── phase4_demo/     # Streamlit interactive demo
-├── phase5/          # Temporal LSTM intent detection
+├── phase4/          # Temporal LSTM intent detection
+├── demo/            # Streamlit interactive demo
 ├── data/            # Raw, cleaned, and PhysioNet data
 ├── models/          # Trained model checkpoints
 └── results/         # Evaluation metrics and figures
@@ -81,7 +81,7 @@ pip install -r requirements.txt
 python run_pipeline.py --phase 1    # Problem demonstration
 python run_pipeline.py --phase 2    # Multi-condition training
 python run_pipeline.py --phase 3    # Transfer learning
-python run_pipeline.py --phase 5    # Temporal LSTM
+python run_pipeline.py --phase 4    # Temporal LSTM
 python run_pipeline.py --demo       # Interactive demo
 python run_pipeline.py --all        # Run all phases
 ```
