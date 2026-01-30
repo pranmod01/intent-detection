@@ -1,6 +1,6 @@
 # Motor Intent Detection in Hybrid BCIs
 
-Distinguishing volitional motor intent from externally-evoked neural responses in EEG signals.
+Distinguishing volitional motor intent from externally-evoked neural responses in EEG signals. Awarded the [Neurable Research Grant](https://www.neurable.com/researchgrant).
 
 ## The Problem
 
@@ -112,3 +112,4 @@ This is a proof-of-concept with a small local dataset (2 subjects). The results 
 2. **The fix is straightforward**: Include negative examples during training
 3. **Deep learning isn't required**: CSP+LDA matches EEGNet performance with proper training data
 4. **Temporal modeling adds value**: LSTMs can detect intent onset within trials
+
